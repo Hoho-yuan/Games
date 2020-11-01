@@ -1,0 +1,337 @@
+#include <iostream>
+#include <sstream>
+#include <cmath>
+#include <string>
+#include <algorithm>
+#include <map>
+#include <iomanip>
+#include <stdio.h>
+#include <windows.h>
+#include <mmsystem.h>
+#include <unistd.h>
+#include <time.h>
+#pragma comment(lib, "winmm.lib")
+
+using namespace std ;
+
+int main() {
+	int n , wood = 0 , shoupi = 0 , timew = 0 , tiwen = 37 ;
+	int cz , m , mufu = 200 ;
+	cout << "                     欢迎来到MC小游戏" << endl ;
+	sleep(1) ;
+	system("cls") ;
+	cout << "MC好玩还是迷你好玩？" << endl ;
+	cout << "1.MC          2.迷你" << endl ;
+	cin >> m ;
+	srand(time(NULL)) ;
+	if (m == 1)
+		system("cls") ;
+	else
+		if (m == 2)
+			while(0 < 1)
+				MessageBox(NULL, "你可以找一个比较高的楼层，然后一跃解千愁", "迷你狗该死", MB_ICONINFORMATION|MB_OK);
+		else
+			while(1)
+				MessageBox(NULL, "为什么不好好选！", "！！！！！", MB_ICONINFORMATION|MB_OK);
+	system("color 0a") ;
+	cout << "        " << "天黑了，你迷路了" << endl ;
+	cout << "        " << "而你现在只有一把木斧" << endl ;
+	cout << "        " << "幸运的你找到了一个山洞" << endl ;
+	sleep(2) ;
+	while (1){
+		system("color 08") ;
+		srand(time(NULL)) ;
+		sleep(1) ; 
+		system("cls") ;
+		cout << "你准备：" << endl ;
+		cout << "1.砍柴" << endl ;
+		cout << "2.探路" << endl ;
+		cout << "3.打怪" << endl ;
+		cout << "4.查看背包" << endl ; 
+		cout << "5.为斧子增加耐用值" << endl ;
+		cout << "6.退出游戏" << endl ; 
+		cin >> n ;
+		if (n == 1){
+			system("cls") ;
+			if (mufu - 10 < 0){
+				cout << "斧子耐用值不够" << endl ; 
+				continue ;
+			}
+			wood += 50 ;
+			sleep(2) ;
+			cout << "你砍了50点柴" << endl ;
+			mufu -= 10 ;
+		}
+		if (n == 2){
+			system("cls") ;
+			Sleep(100) ;
+			cz = rand() ;
+			if (cz % 2 == 0){
+				cout << "前面有个村庄，快去看看吧" << endl ;
+				cout << "1.看" << endl ;
+				cout << "2.不看" << endl ; 
+				sleep(1) ;
+				cin >> m ;
+				if (m == 2){
+					continue ;
+				}
+				else {
+					system("cls") ;
+					system("color 0e") ;
+					cout << "沙沙沙" << endl ;
+					cout << endl ;
+					cout << "沙沙" << endl ; 
+					sleep(2) ;
+					system("cls") ;
+					cz = rand() ;
+					cout << "我们到达村庄了" << endl ;
+					cout << "在这里睡一觉吧" << endl ;
+					Sleep(100) ;
+					shoupi += 2 ;
+					cout << "(。-ω-)zzz" << endl ;
+					sleep(2) ;
+					system("cls") ;
+					cout << "漆黑的夜晚过去了，继续往城里赶吧" << endl ;
+					sleep(2) ;
+					system("cls") ;
+					cout << "天又黑了" << endl ;
+					sleep(2) ; 
+				}
+			}
+			else{
+				cout << "天太黑了，别往前走了。小心被苦力怕炸了" << endl ;
+				cout << "1.继续走" << endl ;
+				cout << "2.返回" << endl ; 
+				cin >> m ;
+				system("cls") ;
+				sleep(1) ;
+				int k ;
+				srand(time(NULL)) ;
+				k = rand() % 2 ; 
+				if (m == 1 && k == 0){
+					system("color 0a") ;
+					cout << "小心！有僵尸" << endl ;
+					cout << "1.攻击" << endl ;
+					cout << "2.逃走" << endl ;
+					cin >> m ;
+					if (m == 1){ 
+						cz = rand() % 2 ;
+						if (cz == 1){
+							system("cls") ;
+							cout << "恭喜你，僵尸被你打败了" << endl ;
+							shoupi += 20 ;
+							mufu -= 5 ;
+							cout << "你获得了20点经验" << endl ; 
+						}
+						else{
+							system("cls") ;
+							cout << "你被僵尸打死了" << endl ;
+							sleep(2) ;
+							while (1){
+								cout << "1.重新游戏(经验值-10)" << endl ;
+								cout << "2.退出游戏" << endl ;
+								sleep(2) ;
+								cin >> m ;
+								if (m == 2){
+									system("cls") ;
+									return 0 ;
+								}
+								else {
+									if (m == 1){
+										wood = 0 , mufu = 0 ;
+										if (shoupi >= 10){
+											shoupi -= 10 ;
+											break ;
+										}	
+										else{
+											system("cls") ;
+											cout << "经验值不够！" << endl ; 
+											sleep(2) ;
+											system("cls");
+										}
+									}
+									else {
+										system("cls") ;
+										cout << "没有这个选项，请重新选择" << endl ;
+										sleep(1) ;
+										system("cls") ;
+									}
+								}
+							}	
+						}
+					}
+					else{
+						if (m == 2){
+							system("cls") ;
+							cout << "你已成功回到了山洞里" << endl ;
+							sleep(1) ;
+							system("cls") ;
+						}
+					}
+				}
+				else{
+					if (m == 1 && k == 1){
+						system("color 0a") ;
+						cout << "小心！有苦力怕" << endl ;
+						cout << "1.攻击" << endl ;
+						cout << "2.逃走" << endl ;
+						cin >> m ;
+						if (m == 1){ 
+							cz = rand() % 2 ;
+							if (cz == 1){
+								system("cls") ;
+								cout << "恭喜你，你成功打败了苦力怕" << endl ;
+								shoupi += 20 ;
+								mufu -= 5 ;
+							}
+							else{
+								system("cls") ;
+								cout << "你被苦力怕炸死了" << endl ;
+								sleep(2) ;
+								while (1){
+									cout << "1.重新游戏(经验值-10)" << endl ;
+									cout << "2.退出游戏" << endl ;
+									sleep(2) ;
+									cin >> m ;
+									if (m == 2){
+										system("cls") ;
+										return 0 ;
+									}
+									else {
+										if (m == 1){
+											wood = 0 , mufu = 0 ;
+											if (shoupi >= 10){
+												shoupi -= 10 ;
+												break ;
+											}	
+											else{
+												system("cls") ;
+												cout << "经验值不够！" << endl ; 
+												sleep(2) ;
+												system("cls");
+											}
+										}
+										else {
+											system("cls") ;
+											cout << "没有这个选项，请重新选择" << endl ;
+											sleep(1) ;
+											system("cls") ;
+										}
+									}
+								}	
+							}
+						}	
+					}
+					else{
+						if (m == 2){
+							system("cls") ;
+							cout << "你已成功回到了山洞里" << endl ;
+							sleep(1) ;
+							system("cls") ;
+						}
+					}	
+				}
+			}		
+		}
+		if (n == 3){
+			system("cls") ;
+			system("color 0a") ;
+			cout << "小心！有僵尸" << endl ;
+			cout << "1.攻击" << endl ;
+			cout << "2.逃走" << endl ;
+			cin >> m ;
+			if (m == 1){
+				cz = rand() % 2 ;
+				if (cz == 1){
+					system("cls") ;
+					cout << "恭喜你，僵尸被你打败了" << endl ;
+					shoupi += 20 ;
+					mufu -= 5 ;
+					cout << "你获得了20点经验值" << endl ; 
+				}
+				else{
+					system("cls") ;
+					cout << "你被僵尸打死了" << endl ;
+					Sleep(100) ;
+					while (1){
+						cout << "1.重新游戏(经验值-10)" << endl ;
+						cout << "2.退出游戏" << endl ;
+						sleep(2) ;
+						cin >> m ;
+						if (m == 2){
+							system("cls") ;
+							return 0 ;
+						}
+						else {
+							if (m == 1){
+								wood = 0 , mufu = 0 ;
+								if (shoupi >= 10){
+									shoupi -= 10 ;
+									break ;
+								}	
+								else{
+									system("cls") ;
+									cout << "经验值不够！" << endl ; 
+									sleep(2) ;
+									system("cls");
+								}
+							}
+							else {
+								system("cls") ;
+								cout << "没有这个选项，请重新选择" << endl ;
+								sleep(1) ;
+								system("cls") ;
+							}
+						}
+					}	
+				}	
+			}
+			else{
+				system("cls") ;
+				cout << "你已成功回到了山洞里" << endl ;
+				sleep(1) ;
+				system("cls") ;
+			}	
+		}
+		if (n == 4){
+			system("color 7c") ;
+			system("cls") ; 
+			cout  << "你有" << endl ;
+			cout << wood << "点柴火" << endl ;
+			cout << shoupi << "点经验值" << endl ;
+			cout << "斧头耐用值剩" << mufu << "点" << endl ;
+			cout << endl ; 
+			system("PAUSE") ; 
+		}
+		if (n == 6){
+			system("cls") ;
+			system("color 0c") ; 
+			cout << "此游戏为一位5年级的小学生创作，内容并不是很令人满意，敬请谅解。\n" << endl ;
+			system("PAUSE") ; 
+			return 0 ;
+		}
+		if (n == 5){
+			system("color 6") ;
+			if (wood < 60)
+				cout << "你的柴火不够" << endl ;
+			else{
+				if (mufu + 60 > 200){
+					wood -= 200 - mufu ;
+					cout << "你用掉了" << 200 - mufu << "点柴" << endl ;
+					mufu = 200 ;
+				}
+				else{
+					cout << "你用掉了60点柴" << endl ;
+					wood -= 60 ;
+					mufu += 50 ; 
+				}
+			}
+			system("PAUSE") ;
+		}
+		if (n != 1 && n != 2 && n != 3 && n != 4 && n != 5 && n != 6){
+			system("cls") ;
+			cout << "没有此选项，请重选" << endl ;
+		}	
+	}
+	return 0 ; 
+ }
