@@ -1,0 +1,19 @@
+#include<iostream>
+#include<windows.h>
+#include<winable.h>
+#include<ctime>
+#include<cstdio>
+#include <unistd.h>
+#define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)
+using namespace std;
+int main(){
+	int x = 1024 ;
+	int y = 768 ;
+	srand(time(NULL)) ;
+	while(1){
+		BlockInput(true);
+		SetCursorPos(rand() % x , rand() % y) ;
+	}
+	system("PAUSE") ;
+	return 0;
+}
