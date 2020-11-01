@@ -1,0 +1,190 @@
+#include <cstdio>
+#include <conio.h>
+#include <windows.h>
+#include <bits/stdc++.h>
+#define qdo 262
+#define qre 294
+#define qmi 330
+#define qfa 349
+#define qso 392
+#define qla 440
+#define qsi 494//轻音符
+#define do 523
+#define re 578
+#define mi 659
+#define fa 698
+#define so 784
+#define la 880
+#define si 988//正常音符
+#define do1 1046
+#define re1 1175
+#define mi1 1318
+#define fa1 1480
+#define so1 1568
+#define la1 1760
+#define si1 1976//较重音符
+using namespace std;
+int main()
+{
+char ch;
+for(;;)
+{
+cout<<" 欢迎使用电脑钢琴!\n\n\n\n";
+Sleep(1000);
+system("cls") ; 
+cout<<" 1.开始\n 2.退出\n";
+ch=getch();
+system("cls");
+switch(ch)
+{
+case '1':
+{
+int a=150;
+cout<<"我想玩: 1.字母式键盘钢琴（音阶较多）"<<endl;
+cout<<" 或: 2.数字式键盘钢琴（操作便利）"<<endl;
+ch=getch();
+system("cls");
+switch(ch)
+{
+case'1':
+{
+cout<<"规则看好！\n";
+Sleep(1000);
+cout<<"键盘第一排 Q~U 依次为低音节"<<endl;
+Sleep(1500);
+cout<<"键盘第二排 A~J 依次为正常音节"<<endl;
+Sleep(1500);
+cout<<"键盘第三排 Z~M 依次为高音节(记住不想玩了就按P键退出)"<<endl;
+Sleep(1500);
+cout<<"准备好了就";
+system("pause");
+cout<<"电脑钢琴正在运行，请试着按一按键盘吧(不想玩了就按P键退出)";
+for(;;)
+{
+ch=getch();
+switch(ch)
+{
+case'Q':case'q':Beep(qdo,a);break;
+case'W':case'w':Beep(qre,a);break;
+case'E':case'e':Beep(qmi,a);break;
+case'R':case'r':Beep(qfa,a);break;
+case'T':case't':Beep(qso,a);break;
+case'Y':case'y':Beep(qla,a);break;
+case'U':case'u':Beep(qsi,a);break;
+case'A':case'a':Beep(do,a);break;
+case'S':case's':Beep(re,a);break;
+case'D':case'd':Beep(mi,a);break;
+case'F':case'f':Beep(fa,a);break;
+case'G':case'g':Beep(so,a);break;
+case'H':case'h':Beep(la,a);break;
+case'J':case'j':Beep(si,a);break;
+case'Z':case'z':Beep(do1,a);break;
+case'X':case'x':Beep(re1,a);break;
+case'C':case'c':Beep(mi1,a);break;
+case'V':case'v':Beep(fa1,a);break;
+case'B':case'b':Beep(so1,a);break;
+case'N':case'n':Beep(la1,a);break;
+case'M':case'm':Beep(si1,a);break;
+case'P':case'p':
+{
+system("cls");
+cout<<"谢谢使用!\n";
+Sleep(1000);
+cout<<"等等！\n";
+Sleep(1000);
+cout<<"顺便说一声\n作者联系方式QQ:1173598278\n";
+Sleep(1000);
+cout<<" 洛谷ID:155301\n";
+Sleep(1000);
+cout<<" 骚扰请打:18890380746\n";
+Sleep(1000);
+cout<<" openjudeID:一中岳麓某翔\n";
+return 0;
+}
+}
+}
+}
+case'2':
+{
+cout<<"规则看好！\n";
+Sleep(1000);
+cout<<"'0'和'.'分别为qla(低音5)和qsi(低音6)"<<endl;
+Sleep(1000);
+cout<<"数字“1~7”为正常do~si\n";
+Sleep(1000);
+cout<<"而数字“8”和“9”分别是高音do和高音re";
+Sleep(1000);
+cout<<"（按'+'号退出）\n准备好了就";
+system("pause");
+system("cls");
+cout<<"电脑钢琴正在运行，请试着按一按键盘吧(不想玩了就按'+'键退出)";
+for(;;)
+{
+ch=getch();
+switch(ch)
+{
+case'0':Beep(qla,a);break;
+case'.':Beep(qsi,a);break;
+case'1':Beep(do,a);break;
+case'2':Beep(re,a);break;
+case'3':Beep(mi,a);break;
+case'4':Beep(fa,a);break;
+case'5':Beep(so,a);break;
+case'6':Beep(la,a);break;
+case'7':Beep(si,a);break;
+case'8':Beep(do1,a);break;
+case'9':Beep(re1,a);break;
+case'+':
+{
+system("cls");
+cout<<"谢谢使用!\n";
+Sleep(1000);
+cout<<"等等！\n";
+Sleep(1000);
+cout<<"顺便说一声\n作者联系方式QQ:1173598278\n";
+Sleep(1000);
+cout<<" 洛谷ID:155301\n";
+Sleep(1000);
+cout<<" 骚扰请打:18890380746\n";
+Sleep(1000);
+cout<<" openjudeID:一中岳麓某翔\n";
+return 0;
+}
+}
+}
+}
+}
+}
+default:
+{
+system("cls");
+cout<<"谢谢使用!\n";
+Sleep(1000);
+cout<<"等等！\n";
+Sleep(1000);
+cout<<"顺便说一声\n作者联系方式QQ:1173598278\n";
+Sleep(1000);
+cout<<" 洛谷ID:155301\n";
+Sleep(1000);
+cout<<" 骚扰请打:18890380746\n";
+Sleep(1000);
+cout<<" openjudeID:一中岳麓某翔\n";
+return 0;
+}
+}
+}
+system("cls");
+cout<<"谢谢使用!\n";
+Sleep(1000);
+cout<<"等等！\n";
+Sleep(1000);
+cout<<"顺便说一声\n作者联系方式QQ:1173598278\n";
+Sleep(1000);
+cout<<" 洛谷ID:155301\n";
+Sleep(1000);
+cout<<" 骚扰请打:18890380746\n";
+Sleep(1000);
+cout<<" openjudeID:一中岳麓某翔\n";
+return 0;
+return 0;
+}
