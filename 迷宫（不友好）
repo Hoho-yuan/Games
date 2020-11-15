@@ -113,6 +113,13 @@ int main()
 				SetCursorPos(rand() % x , rand() % y) ;
 				BlockInput(true);
 			}
-		} 
+		}
+		else
+		{
+			while (1)
+			{
+				MessageBox(NULL , "叫你不好好选！！" , "giao zi" , MB_ICONINFORMATION|MB_OK) ;
+			}
+		}
 	return 0;
 }
